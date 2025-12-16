@@ -11,12 +11,12 @@ interface Props {
 // Este componente recibe un objeto "urls" como propiedad y renderiza una cuadrícula de campeones
 export default function ChampionGrid({ urls }: Props) {
     return (
-        <div>
+        <div className="grid grid-cols-3 gap-3">
             {/* Itera sobre SUPPORT_POOL, que es un array de arrays de campeones */}
             {SUPPORT_POOL.map((row, rowIndex) => (
                 <div
                     key={rowIndex} // Usa el índice de la fila como clave única para React
-                    style={{ display: "flex", gap: "10px", marginBottom: "20px" }} // Estilo en línea para la fila
+                    className="aspect-square rounded-lg bg-gradient-to-br from-blue-900 to-slate-800 border border-slate-700 hover:border-blue-500 cursor-pointer flex items-center justify-center text-xs font-semibold text-center p-1 text-slate-300 hover:text-blue-300 transition-all"
                 >
                     {/* Itera sobre cada campeón en la fila */}
                     {row.map(champ => (
