@@ -15,10 +15,13 @@
  */
 
 export const SUPPORT_POOL = [
-    ["janna", "lulu", "milio", "nami", "rell", "seraphine"],
-    ["braum", "karma", "lux", "morgana", "neeko", "rakan"],
-    ["senna", "sona", "taric"]
+    ["Janna", "Lulu", "Milio", "Nami", "Rell", "Seraphine"],
+    ["Braum", "Karma", "Lux", "Morgana", "Neeko", "Rakan"],
+    ["Senna", "Sona", "Taric"]
 ];
 
-
-
+// Pool actual de ADC - Gapetex
+export const ADC_POOL = [
+    ["Aphelios", "Caitlyn", "Ezreal", "Jhin", "Kai'Sa", "Miss Fortune"],
+    ["Samira", "Tristana", "Vayne", "Xayah", "Zeri"]
+];

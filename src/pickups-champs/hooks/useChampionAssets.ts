@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { getChampionSplashUrls } from "../api/commdragon";
+import { getIconoChampion } from "../api/ddragon";
 
 export default function useChampionAssets() {
     const [championUrls, setChampionUrls] = useState<Record<string, string>>({});
 
     useEffect(() => {
         async function fetchAssets() {
-            const urls = await getChampionSplashUrls();
+            const urls = await getIconoChampion();
             setChampionUrls(urls);
         }
 

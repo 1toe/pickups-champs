@@ -1,3 +1,7 @@
+import { SUPPORT_POOL } from "../constants/champions";
+
+
+
 // Obtener el último parche de League of Legends desde la API de Data Dragon
 // Funcionamiento:
 // 1. Realiza una solicitud fetch a la URL de versiones de Data Dragon.
@@ -11,8 +15,25 @@ export async function ultimoParche(): Promise<string> {
 }
 
 
+// Obtener cada icono de campeón.
+// Funcionamiento:
+// 1. Llama a la función ultimoParche para obtener la versión más reciente del juego.
+// 2. Itera sobre el SUPPORT_POOL para construir un objeto con las URLs de los iconos de los campeones.
+// 3. Retorna un objeto donde las claves son los nombres de los campeones y los valores son las URLs de sus iconos.
+export async function getIconoChampion() {
+    const patch = await ultimoParche();
+    const urls: Record<string, string> = {};
 
-// Desglose: 15.24.1
+    SUPPORT_POOL.flat().forEach(champ => {
+        urls[champ] = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${champ}.png`;
+    });
+
+    return urls;
+}
+
+// END POINT Square: https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${champ}.png
+
+// Desglose:
 // - La función es asíncrona y devuelve una promesa que resuelve a un string.
 // - Utiliza fetch para obtener datos de la API de Data Dragon.
 // - La respuesta se convierte a JSON y se asume que es un array de strings.

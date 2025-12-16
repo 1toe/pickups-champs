@@ -1,0 +1,21 @@
+Plan: 1) Aclarar términos; 2) Explicar extensiones y cuándo usar cada una; 3) Recomendación concreta para tu repo.
+
+Términos clave:
+
+React / ReactJS: Mismo framework; “ReactJS” es solo el nombre histórico. Para web usas react + react-dom.
+Extensiones y cuándo usarlas:
+
+.tsx: Usa para archivos TypeScript que contienen JSX (componentes React).
+.ts: Usa para módulos TypeScript sin JSX (helpers, API, tipos).
+.jsx: Usa si tu proyecto es JavaScript (no TypeScript) y contiene JSX.
+.js: Usa para JavaScript sin JSX.
+Por qué elegir .tsx en tu repo:
+
+Tu repo ya tiene tsconfig*.json, .tsx (ChampionGrid.tsx) y Vite configurado para TypeScript → estás en un proyecto React + TypeScript.
+TypeScript da tipado, autocompletado y menos errores en refactors: ideal para componentes y API wrappers (ddragon.ts → ddragon.ts o ddragon.ts + más archivos .ts).
+Buenas prácticas rápidas:
+
+Componentes UI → .tsx.
+Lógica / llamadas a APIs → .ts (o dividir en api/ddragon/versions.ts, api/ddragon/champions.ts).
+Mantén coherencia: evita mezclar .jsx y .tsx a menos que allowJs y convenciones estén claras.
+Asegura tsconfig.json con jsx: "react-jsx" (o el preset que uses).
