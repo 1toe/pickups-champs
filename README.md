@@ -7,6 +7,13 @@ Aplicación web para analizar y visualizar posibles sinergias entre campeones en
 
 Por el momento está disponible solamente para la botlane.
 
+
+## Consulta de Datos
+
+Los datos son obtenidos de la API de Data Dragon de Riot Games.
+- Veriones: https://ddragon.leagueoflegends.com/api/versions.json
+- Endpoints de [ComunityDragon](https://cdn.communitydragon.org/): https://cdn.communitydragon.org/endpoints
+
 ## Stack Tecnológico
 - React
 - TypeScript
