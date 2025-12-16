@@ -15,4 +15,3 @@ export default function useChampionAssets() {
 
     return championUrls;
 }
-1

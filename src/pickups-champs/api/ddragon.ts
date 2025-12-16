@@ -10,7 +10,9 @@ export async function ultimoParche(): Promise<string> {
     return versiones[0]; // Último parche
 }
 
-// Desglose:
+
+
+// Desglose: 15.24.1
 // - La función es asíncrona y devuelve una promesa que resuelve a un string.
 // - Utiliza fetch para obtener datos de la API de Data Dragon.
 // - La respuesta se convierte a JSON y se asume que es un array de strings.
