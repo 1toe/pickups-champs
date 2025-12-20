@@ -22,6 +22,6 @@ export const SUPPORT_POOL = [
 
 // Pool actual de ADC - Gapetex
 export const ADC_POOL = [
-    ["Aphelios", "Caitlyn", "Ezreal", "Jhin", "Kai'Sa", "Miss Fortune"],
+    ["Aphelios", "Caitlyn", "Ezreal", "Jhin", "Kaisa", "MissFortune"],
     ["Samira", "Tristana", "Vayne", "Xayah", "Zeri"]
 ];

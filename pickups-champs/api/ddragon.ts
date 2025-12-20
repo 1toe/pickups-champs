@@ -1,4 +1,4 @@
-import { SUPPORT_POOL } from "../constants/champions";
+import { SUPPORT_POOL, ADC_POOL } from "../constants/champions";
 
 
 
@@ -24,12 +24,29 @@ export async function getIconoChampion() {
     const patch = await ultimoParche();
     const urls: Record<string, string> = {};
 
-    SUPPORT_POOL.flat().forEach(champ => {
+    // Combinar ambos pools de campeones, solamente vienen de 
+    const todosLosCampeones = [...SUPPORT_POOL.flat(), ...ADC_POOL.flat()];
+
+    todosLosCampeones.forEach(champ => {
         urls[champ] = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${champ}.png`;
     });
 
     return urls;
 }
+
+// Obtener información detallada de un campeón específico.
+// Funcionamiento:
+// 1. Llama a la función ultimoParche para obtener la versión más reciente del juego.
+// 2. Realiza una solicitud fetch a la URL específica del campeón en la API de Data Dragon.
+// 3. Parsea la respuesta JSON y retorna los datos del campeón (Este está en SUPPORT_POOL o ADC_POOL).
+export async function getInfoChampion(champ: string) {
+    const patch = await ultimoParche();
+    const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/${patch}/data/es_ES/champion/${champ}.json`);
+    const data = await res.json();
+    return data;
+}
+
+
 
 // END POINT Square: https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${champ}.png
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { getIconoChampion } from "../api/ddragon";
-
+import { getIconoChampion } from "../api/ddragon"; // Agregar despues: getInfoChampion
+ 
 export default function useChampionAssets() {
     const [championUrls, setChampionUrls] = useState<Record<string, string>>({});
 
