@@ -9,7 +9,7 @@ import App from './App.tsx' // Importa el componente principal de la aplicación
 // - Envuelve la aplicación en StrictMode para activar verificaciones adicionales en desarrollo
 // - Utiliza createRoot para crear un contenedor de renderizado y luego renderiza el componente App
 // Para editar lo que se muestra en pantalla, modifica el componente "App" en App.tsx
-createRoot(document.getElementById('root')!).render( 
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App /> {/* COMPONENTE principal de la aplicación, modificable en App.tsx */}
   </StrictMode>,
